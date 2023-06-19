@@ -22,9 +22,12 @@ const Register = () => {
     setSelectedFile(file);
   };
 
+
+
   const changeError = () => {
     setErr(false);
   }
+
 
   const handleSubmit = async (e) => {
     setErr(false)
@@ -42,6 +45,8 @@ const Register = () => {
       //Create a unique image name
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
+
+
 
       let downloadURL = ""
 
@@ -78,7 +83,7 @@ const Register = () => {
         <div className="texts">
           <span className="logo-text">Quick Chat</span>
           <span className="form-text">Register</span></div>
-
+      
         <form onSubmit={handleSubmit}>
           <input className="inputs" type="text" name="name" id="name" placeholder="Jhone Doe" required />
           <input className="inputs" onChange={changeError} type="email" name="email" id="email" placeholder="jhone.doe@quickchat.com" required />
