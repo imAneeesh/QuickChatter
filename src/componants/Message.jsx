@@ -12,6 +12,8 @@ const Message = ({ message }) => {
         ref.current?.scrollIntoView({ behavior: "smooth" });
     }, [message]);
 
+    console.log(message.date.seconds/(60*60*60))
+
     return (
         <div
             ref={ref}
@@ -26,7 +28,7 @@ const Message = ({ message }) => {
                     }
                     alt=""
                 />
-                <span>just now</span>
+                <span>now</span>
             </div>
             <div className="messageContent">
                 <p>{message.text}</p>

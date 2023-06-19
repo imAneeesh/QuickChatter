@@ -14,8 +14,9 @@ import {
 import { db, storage } from "../firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-const Inputs = () => {
 
+const Inputs = () => {
+    const shouldFocus = false;
     const [text, setText] = useState("");
     const [img, setImg] = useState(null);
 
@@ -71,14 +72,18 @@ const Inputs = () => {
             [data.chatId + ".date"]: serverTimestamp(),
         });
 
+        
         setText("");
         setImg(null);
     };
-
+    const handleKey = (e) => {
+        e.code === "Enter" && handleSend();
+    };
+    
 
     return (
         <div className="my-input">
-                <input type="text" name="" id="" placeholder="Hello, there" onChange={(e)=>setText(e.target.value)}
+            <input type="text" name="" id="" onKeyDown={handleKey} autoFocus={shouldFocus} placeholder="Hello, there" onChange={(e)=>setText(e.target.value)}
                 value={text}/>
                 <div className="send">
                     <img src={Attach} alt="" />

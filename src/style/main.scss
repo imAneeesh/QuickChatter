@@ -114,6 +114,7 @@ $darkColor: #2f2d52;
                     color: #5d5b8d;
                     margin-left: auto;
                     margin-right: auto;
+                    font-style: oblique;
                 }
             }
 
@@ -127,10 +128,84 @@ $darkColor: #2f2d52;
                     width: 30px;
                 }
             }
+
+            .selected-file {
+                color: rgb(156, 156, 156);
+                font-size: 12px;
+            }
+
+            .registerBtn {
+                cursor: pointer;;
+                font-style: normal;
+                font-weight: bold;
+                color: rgb(104, 104, 104);
+            }
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid blue;
+            border-bottom: 4px solid blue;
+            width: 15px;
+            height: 15px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     }
 }
 
+.wecome {
+    background-color: #caceff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .img {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 1rem 0;
+        }
+    }
+
+    .text {
+        text-align: center;
+
+        h1 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
 
 .home {
     background: #a7bcff;
@@ -160,6 +235,7 @@ $darkColor: #2f2d52;
             overflow-x: hidden;
             width: 100%;
             min-width: 150px;
+            max-width: 300px;
 
 
             .navbar {
@@ -173,6 +249,7 @@ $darkColor: #2f2d52;
 
                 .logo {
                     font-weight: bold;
+
                     @media screen and (max-width:1200px) {
                         display: none;
                     }
@@ -230,7 +307,20 @@ $darkColor: #2f2d52;
                         &::placeholder {
                             color: rgb(201, 201, 201);
                         }
+                    }
 
+                    .btn {
+                        display: flex;
+                        justify-content: center;
+
+                        button {
+                            width: 60px;
+                            height: 30px;
+                            border-radius: 10px;
+                            margin-bottom: 5px;
+                            background: transparent;
+                            color: white;
+                        }
                     }
                 }
             }
@@ -284,11 +374,12 @@ $darkColor: #2f2d52;
                 padding: 10px;
                 color: whitesmoke;
 
-                .username{
+                .username {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    img{
+
+                    img {
                         margin: .5rem;
                         width: 40px;
                         height: 40px;
@@ -347,7 +438,8 @@ $darkColor: #2f2d52;
                             border-radius: 0px 10px 10px 10px;
                             max-width: max-content;
                         }
-                        img{
+
+                        img {
                             border-radius: 10px;
                             max-width: 300px;
                             max-height: 400px;

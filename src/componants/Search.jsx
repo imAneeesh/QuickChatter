@@ -73,8 +73,11 @@ const Search = () => {
         <div className="search">
 
             <div className="searchForm">
-                <input type="text" name="" id="" placeholder="Jhone Doe" onKeyDown={handleKey} onChange={e => setUsername(e.target.value)}
+                <input type="text" name="" id="" autoFocus placeholder="Jhone Doe" onKeyDown={handleKey} onChange={e => setUsername(e.target.value)}
                 value={username} />
+                <div className="btn">
+                    <button onClick={handleSearch} >Search</button>
+                </div>
             </div>
             {err && <span>Usernot found</span>}
             {user && 
