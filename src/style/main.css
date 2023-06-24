@@ -128,63 +128,79 @@
   }
 }
 
-.wecome {
+.welcome {
   background-color: #caceff;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-.wecome .img {
+.welcome .img {
   display: flex;
   justify-content: center;
 }
-.wecome .img img {
+.welcome .img img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin: 1rem 0;
 }
-.wecome .text {
+.welcome .text {
   text-align: center;
 }
-.wecome .text h1 {
+.welcome .text h1 {
   font-size: 28px;
 }
-.wecome .text p {
+.welcome .text p {
   font-size: 16px;
+}
+.welcome .my-btn {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.welcome .my-btn .btn {
+  background-color: #7b96ec;
+  color: white;
+  border: none;
+  width: 90px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .home {
-  background: #a7bcff;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #ddddf7;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  width: 100%;
 }
 .home .container {
-  border-radius: 10px;
   border: 1px solid;
-  width: 65%;
-  height: 80%;
+  width: 100%;
+  height: 100vh;
+  height: 93.9vh;
   display: flex;
   overflow: hidden;
 }
-@media screen and (max-width: 768px) {
-  .home .container {
-    width: 90%;
-  }
-}
 .home .container .sidebar {
-  flex: 1;
+  flex: 0;
+  min-width: 0%;
   background-color: #3e3c61;
   position: relative;
   overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
-  min-width: 150px;
-  max-width: 300px;
 }
 .home .container .sidebar .navbar {
   display: flex;
@@ -197,11 +213,6 @@
 }
 .home .container .sidebar .navbar .logo {
   font-weight: bold;
-}
-@media screen and (max-width: 1200px) {
-  .home .container .sidebar .navbar .logo {
-    display: none;
-  }
 }
 .home .container .sidebar .navbar .user {
   display: flex;
@@ -238,10 +249,15 @@
 }
 .home .container .sidebar .search {
   border-bottom: 1px solid grey;
+  text-align: center;
+}
+.home .container .sidebar .search .searchForm .message {
+  color: white;
+  font-size: 12px;
 }
 .home .container .sidebar .search .searchForm input {
   padding: 0 10px;
-  height: 50px;
+  height: 40px;
   background: transparent;
   border: none;
   color: lightgray;
@@ -293,8 +309,23 @@
   font-size: 12px;
   color: lightgray;
 }
+.home .container .sidebar.open {
+  flex: 1;
+  min-width: 50%;
+}
+@media screen and (min-width: 678px) {
+  .home .container .sidebar.open {
+    min-width: 30%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home .container .sidebar.open {
+    min-width: 20%;
+  }
+}
 .home .container .chat {
-  flex: 3;
+  flex: 2;
+  overflow: hidden;
 }
 .home .container .chat .chat-info {
   height: 50px;
@@ -309,6 +340,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.home .container .chat .chat-info .username span i {
+  font-size: 20px;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
 }
 .home .container .chat .chat-info .username img {
   margin: 0.5rem;
@@ -348,6 +384,9 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.home .container .chat .messages .message .messageInfo .message-time {
+  font-size: 12px;
+}
 .home .container .chat .messages .message .messageContent {
   max-width: 80%;
   display: flex;
@@ -363,8 +402,14 @@
 }
 .home .container .chat .messages .message .messageContent img {
   border-radius: 10px;
-  max-width: 300px;
-  max-height: 400px;
+  width: 200px;
+  height: auto;
+}
+@media screen and (min-width: 550px) {
+  .home .container .chat .messages .message .messageContent img {
+    width: 300px;
+    height: auto;
+  }
 }
 .home .container .chat .messages .message.owner {
   flex-direction: row-reverse;
@@ -381,15 +426,20 @@
   height: 300px;
 }
 .home .container .chat .my-input {
+  margin: 0;
+  background: #ddddf7;
+  position: relative;
+  border-radius: 25px;
   height: 30px;
   background-color: whitesmoke;
   padding: 10px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 .home .container .chat .my-input input {
-  height: 55px;
+  height: 40px;
   background: transparent;
   width: 100%;
   color: #3c3b5e;
@@ -406,16 +456,24 @@
 .home .container .chat .my-input .send {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
 }
 .home .container .chat .my-input .send img {
-  height: 24px;
+  height: 20px;
   cursor: pointer;
 }
 .home .container .chat .my-input .send button {
+  height: 45px;
+  width: 45px;
+  font-size: 16px;
   border: none;
   padding: 10px 15px;
-  color: white;
-  background-color: #577eff;
+  color: #577eff;
+  background: transparent;
   border-radius: 25px;
+}
+.home .container .chat .my-input .send button:active {
+  background: #577eff;
+  color: whitesmoke;
 }/*# sourceMappingURL=main.css.map */

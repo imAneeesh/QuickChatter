@@ -10,10 +10,15 @@ import { ChatContext } from "../context/chatContext";
 const Chat = () => {
     const { data } = useContext(ChatContext);
 
+    const openSideBar = () => {
+        document.querySelector(".sidebar").classList.toggle("open");
+    }
+
     return (
         <div className="chat">
             <div className="chat-info">
                 <span className="username">
+                    <span onClick={openSideBar}><i class="fas fa-solid fa-arrow-left"></i></span>
                     <img src={data.user?.photoURL} alt="img" />
                     <span>{data.user?.displayName}</span>
                 </span>

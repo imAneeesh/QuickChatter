@@ -10,8 +10,8 @@ const Search = () => {
     const [err, setErr] = useState(false);
 
     const { currentUser } = useContext(AuthContext);
-
     const handleSearch = async () => {
+        setErr(false);
         const q = query(
             collection(db, "users"),
             where("displayName", "==", username)
@@ -19,6 +19,7 @@ const Search = () => {
 
         try {
             const querySnapshot = await getDocs(q);
+            console.log(querySnapshot.docs[0].data());
             querySnapshot.forEach((doc) => {
                 setUser(doc.data());
             });
@@ -73,13 +74,15 @@ const Search = () => {
         <div className="search">
 
             <div className="searchForm">
-                <input type="text" name="" id="" autoFocus placeholder="Jhone Doe" onKeyDown={handleKey} onChange={e => setUsername(e.target.value)}
-                value={username} />
+                <input type="text" autoFocus placeholder="Aneesh" onKeyDown={handleKey} onChange={(e) => 
+                    setUsername(e.target.value)
+                }
+                    value={username} onKeyUp={handleSearch}/>
                 <div className="btn">
-                    <button onClick={handleSearch} >Search</button>
+                    {/* <button onClick={handleSearch} >Search</button> */}
                 </div>
+            {err && <span className="message">User not found</span>}
             </div>
-            {err && <span>Usernot found</span>}
             {user && 
             (
             <div className="userChat" onClick={handleSelect}>

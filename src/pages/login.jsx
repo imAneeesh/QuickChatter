@@ -98,7 +98,7 @@ const Login = () => {
                     
                 }
             } catch (err) {
-                errMsg(true)
+                setErrMsg(true)
                setErrMsg("Invalid Credentials")
             }
         }
