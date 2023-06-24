@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/QuickChatter/static/css/main.ff13b142.css",
-    "main.js": "/QuickChatter/static/js/main.466f09e0.js",
-    "static/js/787.8e143ae1.chunk.js": "/QuickChatter/static/js/787.8e143ae1.chunk.js",
-    "static/media/user.svg": "/QuickChatter/static/media/user.e848100a0a6140ea5a142c72368ab3b6.svg",
-    "index.html": "/QuickChatter/index.html",
-    "main.ff13b142.css.map": "/QuickChatter/static/css/main.ff13b142.css.map",
-    "main.466f09e0.js.map": "/QuickChatter/static/js/main.466f09e0.js.map",
-    "787.8e143ae1.chunk.js.map": "/QuickChatter/static/js/787.8e143ae1.chunk.js.map"
+    "main.css": "/imAneeesh/QuickChatterMobile/static/css/main.e3759b66.css",
+    "main.js": "/imAneeesh/QuickChatterMobile/static/js/main.189bd43f.js",
+    "static/js/787.8e143ae1.chunk.js": "/imAneeesh/QuickChatterMobile/static/js/787.8e143ae1.chunk.js",
+    "static/media/user.svg": "/imAneeesh/QuickChatterMobile/static/media/user.e848100a0a6140ea5a142c72368ab3b6.svg",
+    "index.html": "/imAneeesh/QuickChatterMobile/index.html",
+    "main.e3759b66.css.map": "/imAneeesh/QuickChatterMobile/static/css/main.e3759b66.css.map",
+    "main.189bd43f.js.map": "/imAneeesh/QuickChatterMobile/static/js/main.189bd43f.js.map",
+    "787.8e143ae1.chunk.js.map": "/imAneeesh/QuickChatterMobile/static/js/787.8e143ae1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff13b142.css",
-    "static/js/main.466f09e0.js"
+    "static/css/main.e3759b66.css",
+    "static/js/main.189bd43f.js"
   ]
 }
